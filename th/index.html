@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/bf312dc673.js" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="style.css">
+      <script src="https://unpkg.com/css-doodle@0.29.0/css-doodle.min.js"></script>
+   </head>
+<body>  
+  <style class="tudo">
+    css-doodle {
+      --color: @p(#b4fdc0, #67ffca, #eb49fd, #7c49fd);
+
+
+      --rule: (
+        :doodle {
+          @grid: 30x1 / 18vmin;
+          --deg: @p(-180deg, 180deg);
+        }
+        :container {
+          perspective: 30vmin;
+        }
+        :after, :before {
+          content: '';
+          background: var(--color); 
+          @place-cell: @r(100%) @r(100%);
+          @size: @r(6px);
+          @shape: heart;
+        }
+      
+        @place-cell: center;
+        @size: 100%;
+      
+        box-shadow: @m2(0 0 50px var(--color));
+        background: @m100(
+          radial-gradient(var(--color) 50%, transparent 0) 
+          @r(-20%, 120%) @r(-20%, 100%) / 1px 1px
+          no-repeat
+        );
+      
+        will-change: transform, opacity;
+        animation: scale-up 12s linear infinite;
+        animation-delay: calc(-12s / @I * @i);
+  
+        @keyframes scale-up {
+          0%, 95.01%, 100% {
+            transform: translateZ(0) rotate(0);
+            opacity: 0;
+          }
+          10% { 
+            opacity: 1; 
+          }
+          95% {
+            transform: 
+              translateZ(35vmin) rotateZ(@var(--deg));
+          }
+        }
+      )
+    }
+  </style>
+  <css-doodle use="var(--rule)"></css-doodle>
+
+  <div class="text">
+    <a href="yr1/index.html" target="_blank"><span>CLICK HERE</span></a>
+  </div>
+</body>
+
+
+  </html>
