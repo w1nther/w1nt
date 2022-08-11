@@ -1201,7 +1201,7 @@ function multipleSplats (amount) {
         const y = canvas.height * Math.random();
         const dx = 1000 * (Math.random() - 0.5);
         const dy = 1000 * (Math.random() - 0.5);
-        splat(x, y, dx, dy, color);
+        // EU TE ODEIO BUGOU O CODIGO TODOOOOOO splat(x, y, dx, dy, color);
     }
 }
 
